@@ -36,6 +36,11 @@ function App() {
   //"HTML" is actually "JSX"
   //"JAVASCRIPT EXTENDED"
   // AS IN APP.JSX REFERS TO MYH1 SET UP
+  const soberUP = () => {
+    // pass this in onClick
+    setDrinkCount(0);
+  };
+
   return (
     <div>
       <h1>Cullen Training Hour!</h1>
@@ -45,7 +50,7 @@ function App() {
 
       <button onClick={() => setDrinkCount(drinkCount + 1)}>Train up</button>
 
-      <button onClick={() => setDrinkCount(0)}>Rest Day</button>
+      <button onClick={soberUP}>Rest Day</button>
     </div>
   );
 }
