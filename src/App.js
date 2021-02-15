@@ -22,7 +22,10 @@ function App() {
 
   //useState is a 'hook'
   // tool used inside react components
-  let Name = 'self';
+  //variables kittyKat to start
+  //use when changing values of name
+  const [name, setName] = useState('Luca');
+  //let Name = 'Luca';
   //let myH1 = <h1>Go home, {Name}, you're drunk?????</h1>;
   //setDrinkCount function to change drinkCount
   //drinkCount is current val of state
@@ -45,14 +48,23 @@ function App() {
     <div>
       <h1>Cullen Training Hour!</h1>
       <p>
-        {Name} has had {drinkCount} trainings today
+        {name} has had {drinkCount} trainings today
       </p>
 
       <button onClick={() => setDrinkCount(drinkCount + 1)}>Train up</button>
 
       <button onClick={soberUP}>Rest Day</button>
+
+      <input
+        placeholder="Name please"
+        onChange={(event) => {
+          console.log('changing name', event.target.value);
+          setName(event.target.value);
+        }}
+      />
     </div>
   );
 }
-
+// event.target === $(this)
+//event.target.value === $(this).val();
 export default App;
